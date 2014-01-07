@@ -104,6 +104,7 @@ public class DownloadActivity extends AsyncTask<String, String, String> {
 	@Override
 	protected void onPostExecute(String unused) {
 	    mProgressDialog.dismiss();
-	    new KernelFlasher(context).execute(ver);
+	    if (!cancel)
+	    	new KernelFlasher(context).execute(ver);
 	}	
 }
