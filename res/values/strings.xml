@@ -21,5 +21,8 @@
 	<string name="second_tweaks">Second ROM Tweaks</string>
 	<string name="warn">This will erase all your data on secondary ROM. Are sure?</string>
 	<string name="warn_title">Attention</string>
+	<string name="cleanup_warn">This will remove all files related to Dual Boot mode including downloaded kernels. Are you sure want to continue?</string>
+	<string name="cleanup_warn_title">Warning</string>
+	<string name="cleanup">Clean up</string>
 
 </resources>

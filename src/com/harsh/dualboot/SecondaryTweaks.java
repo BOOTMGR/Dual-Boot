@@ -1,15 +1,14 @@
 package com.harsh.dualboot;
 
+import static com.harsh.dualboot.Constants.SECONDARY_CACHE;
+import static com.harsh.dualboot.Constants.SECONDARY_DATA;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-
-import static com.harsh.dualboot.Constants.*;
 
 public class SecondaryTweaks extends Activity {
 	

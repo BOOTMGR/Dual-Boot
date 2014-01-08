@@ -10,6 +10,7 @@ import static com.harsh.dualboot.Constants.STOCK_DIR;
 import static com.harsh.dualboot.Utils.LOG;
 import static com.harsh.dualboot.Utils.SU_wop;
 import static com.harsh.dualboot.Utils.getROM;
+import static com.harsh.dualboot.Constants.*;
 
 import java.io.File;
 
@@ -102,6 +103,8 @@ public class MainActivity extends Activity {
             		startActivity(new Intent(this, SecondaryTweaks.class));
             	else
             		Toast.makeText(this, "Boot into Primary ROM first", Toast.LENGTH_SHORT).show();
+            case R.id.cleanup:
+            	mCleanUP();
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -166,6 +169,22 @@ public class MainActivity extends Activity {
 			return false;
 		}
 		return true;
+	}
+	
+	private void mCleanUP() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(R.string.cleanup_warn);
+		builder.setTitle(R.string.cleanup_warn_title);
+		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            	new SU(MainActivity.this).execute("rm -r " + SECONDARY);
+            	new SU(MainActivity.this).execute("rm -r /cache");
+            	new SU(MainActivity.this).execute("rm -r " + SDCARD_ROOT + "/DualBoot");
+            	return;
+            }
+        });
+		builder.setNegativeButton(R.string.cancel, null);
+		builder.create().show();
 	}
 	
 	private void showStockInfoDialog(final Context context) {
