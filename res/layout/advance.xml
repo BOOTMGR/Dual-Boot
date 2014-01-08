@@ -10,4 +10,11 @@
         android:layout_height="wrap_content"
         android:text="Wipe data/factory Reset" />
 
+    <Button
+        android:id="@+id/but_share"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share data with Primary" />
+
 </LinearLayout>
