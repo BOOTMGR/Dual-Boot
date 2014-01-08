@@ -105,7 +105,10 @@ public class MainActivity extends Activity {
             		Toast.makeText(this, "Boot into Primary ROM first", Toast.LENGTH_SHORT).show();
             	return true;
             case R.id.cleanup:
-            	mCleanUP();
+            	if(getROM() == PRIMARY_ROM)
+            		mCleanUP();
+            	else
+            		Toast.makeText(this, "Boot into Primary ROM first", Toast.LENGTH_SHORT).show();
             	return true;
             default:
                 return super.onOptionsItemSelected(item);
