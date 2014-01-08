@@ -125,7 +125,7 @@ public class MainActivity extends Activity {
 		    			if(!isConnected())
 		    				showInfoDialog();
 		    			else {
-			    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00092/Dxz/CM11_DB.md5","CM11");
+			    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00093/JxE/CM11_DB.md5","CM11");
 		    			}
 		    		} else {
 		    			kf.execute("CM11");
