@@ -1,6 +1,7 @@
 package com.harsh.dualboot;
 
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.InputStream;
 
 import android.content.Context;
@@ -41,5 +42,12 @@ public class Utils {
 			Log.e("harsh_debug", "DualBoot ---> " + msg);
 		else
 			Log.d("harsh_debug", "DualBoot ---> " + msg);
+	}
+	
+	public static int getROM() {
+		File f = new File(PRIMARY_DATA);
+		if(f.exists())
+			return SECONDARY_ROM;
+		return PRIMARY_ROM;
 	}
 }

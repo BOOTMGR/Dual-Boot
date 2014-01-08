@@ -11,6 +11,8 @@ public class Constants {
 	public static final String STOCK_DIR = SDCARD_ROOT + "/DualBoot/Stock";
 	public static final String STOCK = SDCARD_ROOT + "/DualBoot/Stock/stock.md5";
 	public static final String PRIMARY_DATA = "/primary_data";
+	public static final String SECONDARY_DATA = "/data/secondary_data";
+	public static final String SECONDARY_CACHE = "/data/secondary_cache";
 	public static final String BOOT_PART = "/dev/block/mmcblk0p15";
 	public static final int PRIMARY_ROM = 0;
 	public static final int SECONDARY_ROM = 1;

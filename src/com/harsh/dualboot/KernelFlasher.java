@@ -25,7 +25,7 @@ public class KernelFlasher extends AsyncTask<String, Void, Void> {
 	     mProgressDialog = new ProgressDialog(context);
 	     mProgressDialog.setMessage("Flashing Kernel...");
 	     mProgressDialog.setIndeterminate(true);
-	     mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+	     mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 	}
 	
 	@Override

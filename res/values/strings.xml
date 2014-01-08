@@ -5,6 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
     <string name="stock_dialog">Put stock based kernel inside /sdcard/DualBoot/Stock/stock.md5</string>
     <string name="stock_dialog_title">Attention</string>
     <string name="no_network_dialog">Active network connection is required to download necessary files</string>
@@ -17,5 +18,8 @@
     <string name="about">About</string>
     <string name="another_dialog">It is better to download kernels manually and putting them on {sdcard}/DualBoot/RespactiveDir to avoid corrupt downloads and thus bad flashes.</string>
 	<string name="another_dialog_title">Attention</string>
+	<string name="second_tweaks">Second ROM Tweaks</string>
+	<string name="warn">This will erase all your data on secondary ROM. Are sure?</string>
+	<string name="warn_title">Attention</string>
 
 </resources>

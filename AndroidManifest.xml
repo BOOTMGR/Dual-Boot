@@ -33,6 +33,11 @@
             android:label="@string/about"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.harsh.dualboot.SecondaryTweaks"
+            android:label="@string/second_tweaks"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

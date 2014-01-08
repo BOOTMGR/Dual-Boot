@@ -4,12 +4,12 @@ import static com.harsh.dualboot.Constants.CM102_DIR;
 import static com.harsh.dualboot.Constants.CM11_DIR;
 import static com.harsh.dualboot.Constants.D;
 import static com.harsh.dualboot.Constants.E;
-import static com.harsh.dualboot.Constants.PRIMARY_DATA;
 import static com.harsh.dualboot.Constants.PRIMARY_ROM;
 import static com.harsh.dualboot.Constants.SECONDARY_ROM;
 import static com.harsh.dualboot.Constants.STOCK_DIR;
 import static com.harsh.dualboot.Utils.LOG;
 import static com.harsh.dualboot.Utils.SU_wop;
+import static com.harsh.dualboot.Utils.getROM;
 
 import java.io.File;
 
@@ -97,6 +97,11 @@ public class MainActivity extends Activity {
             case R.id.about:
                 startActivity(new Intent(this, About.class));
                 return true;
+            case R.id.second_tweaks:
+            	if(getROM() == PRIMARY_ROM)
+            		startActivity(new Intent(this, SecondaryTweaks.class));
+            	else
+            		Toast.makeText(this, "Boot into Primary ROM first", Toast.LENGTH_SHORT).show();
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -239,12 +244,4 @@ public class MainActivity extends Activity {
 		if(!f.exists())
 			f.mkdirs();
 	}
-	
-	private int getROM() {
-		File f = new File(PRIMARY_DATA);
-		if(f.exists())
-			return SECONDARY_ROM;
-		return PRIMARY_ROM;
-	}
-
 }

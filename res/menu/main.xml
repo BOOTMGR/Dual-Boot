@@ -1,3 +1,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:id="@+id/about" android:title="@string/about" android:showAsAction="ifRoom"></item>
+    <item android:id="@+id/second_tweaks" android:title="@string/second_tweaks"></item>
 </menu>
