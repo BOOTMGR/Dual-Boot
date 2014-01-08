@@ -15,5 +15,7 @@
     <string name="developer">Developer:</string>
     <string name="me">Harsh Panchal (BOOTMGR@xda-developers.com)</string>
     <string name="about">About</string>
+    <string name="another_dialog">It is better to download kernels manually and putting them on {sdcard}/DualBoot/RespactiveDir to avoid corrupt downloads and thus bad flashes.</string>
+	<string name="another_dialog_title">Attention</string>
 
 </resources>

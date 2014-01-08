@@ -181,6 +181,19 @@ public class MainActivity extends Activity {
 		builder.setTitle(R.string.first_dialog_title);
 		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+            	showAnotherDialog();
+            	return;
+            }
+        });
+		builder.create().show();
+	}
+	
+	private void showAnotherDialog() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(R.string.another_dialog);
+		builder.setTitle(R.string.another_dialog_title);
+		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
             	return;
             }
         });
