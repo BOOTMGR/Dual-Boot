@@ -45,6 +45,9 @@ public class MainActivity extends Activity {
 		but_sec = (Button) findViewById(R.id.but_secondary);
 		SharedPreferences mprefs = MainActivity.this.getSharedPreferences("download",0);
 		boolean b = mprefs.getBoolean("interuppted", false);
+		boolean first = mprefs.getBoolean("first", true);
+		if(first)
+			showFirstTimeDialog();
 		if(b)
 			new File(mprefs.getString("last", null)).delete();
 		SharedPreferences.Editor editor = mprefs.edit();
@@ -61,6 +64,8 @@ public class MainActivity extends Activity {
 				but_prim.setOnClickListener(prim_listner);
 				break;
 		}
+		editor.putBoolean("first", false);
+		editor.commit();
 	}
 	
 	OnClickListener prim_listner = new OnClickListener() {
@@ -151,6 +156,18 @@ public class MainActivity extends Activity {
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		builder.setMessage(R.string.stock_dialog);
 		builder.setTitle(R.string.stock_dialog_title);
+		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            	return;
+            }
+        });
+		builder.create().show();
+	}
+	
+	private void showFirstTimeDialog() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(R.string.first_dialog);
+		builder.setTitle(R.string.first_dialog_title);
 		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
             	return;

@@ -9,5 +9,7 @@
     <string name="stock_dialog_title">Attention</string>
     <string name="no_network_dialog">Active network connection is required to download necessary files</string>
     <string name="no_network_dialog_title">No connection</string>
+    <string name="first_dialog">This application performs dangerous operations.You\'re using this application on your own risk.Developer is not responsible for any damage done by this software.It is highly recommended to use this application under lower system load.</string>
+    <string name="first_dialog_title">Attention</string>
 
 </resources>
