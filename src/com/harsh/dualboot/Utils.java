@@ -27,6 +27,7 @@ public class Utils {
             os.writeBytes(cmds+"\n");
             os.writeBytes("exit\n");
             os.flush();
+            p.waitFor();
             InputStream stdout = p.getInputStream();
             byte[] buffer = new byte[4096];
             int read;
