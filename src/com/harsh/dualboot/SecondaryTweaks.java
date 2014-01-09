@@ -26,6 +26,7 @@ public class SecondaryTweaks extends Activity {
 		setContentView(R.layout.advance);
 		Button but_wipe = (Button) findViewById(R.id.but_wipe);
 		Button but_share = (Button) findViewById(R.id.but_share);
+		Button but_share_ret = (Button) findViewById(R.id.but_share_rev);
 		but_wipe.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -38,6 +39,13 @@ public class SecondaryTweaks extends Activity {
 			@Override
 			public void onClick(View v) {
 				warnUser();
+			}
+		});
+		but_share_ret.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				mRevertShare();
 			}
 		});
 	}
@@ -65,6 +73,22 @@ public class SecondaryTweaks extends Activity {
             public void onClick(DialogInterface dialog, int id) {
             	new SU(SecondaryTweaks.this).execute("rm -r " + SECONDARY_DATA + "/app");
             	new SU(SecondaryTweaks.this).execute("ln -s " + PRIMARY_DATA + "/app " + SECONDARY_DATA + "/app");
+            	return;
+            }
+        });
+		builder.setNegativeButton(R.string.cancel, null);
+		builder.create().show();
+	}
+	
+	private void mRevertShare() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(R.string.share_rev_dialog);
+		builder.setTitle(R.string.cleanup_warn_title);
+		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            	new SU(SecondaryTweaks.this).execute("rm -r " + SECONDARY_DATA + "/app");
+            	new SU(SecondaryTweaks.this).execute("mkdir " + SECONDARY_DATA + "/app");
+            	new SU(SecondaryTweaks.this).execute("chmod 775 " + SECONDARY_DATA + "/app");
             	return;
             }
         });

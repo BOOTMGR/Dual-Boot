@@ -15,5 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Share Apps with Primary" />
+    
+    <Button
+        android:id="@+id/but_share_rev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Revert Share Apps with Primary" />
 
 </LinearLayout>
