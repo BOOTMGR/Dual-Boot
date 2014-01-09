@@ -13,6 +13,7 @@ import static com.harsh.dualboot.Constants.CM11;
 import static com.harsh.dualboot.Constants.E;
 import static com.harsh.dualboot.Constants.STOCK;
 import static com.harsh.dualboot.Utils.LOG;
+import static com.harsh.dualboot.Constants.*;
 
 import java.io.DataOutputStream;
 
@@ -61,6 +62,10 @@ public class KernelFlasher extends AsyncTask<String, Void, Void> {
 	        	   path = CM102;
 	           else if (arg[0].equals("stock"))
 	        	   path = STOCK;
+	           else if (arg[0].equals("CM11_stock"))
+	        	   path = CM11_stock;
+	           else if (arg[0].equals("CM102_stock"))
+	        	   path = CM102_stock;
 	           os.writeBytes("dd if=" + path + " of=" + BOOT_PART + "\n");
 	           os.writeBytes("exit\n");
 	           os.flush();

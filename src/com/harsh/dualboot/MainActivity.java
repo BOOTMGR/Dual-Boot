@@ -145,27 +145,9 @@ public class MainActivity extends Activity {
 		    		else
 		    			kf.execute("stock");
 		    	} else if (items[item].equals("CM 10.2")) {
-		    		File f = new File(CM102_DIR + "/CM102_DB.md5");
-		    		if(!f.exists()) {
-		    			if(!isConnected())
-		    				showInfoDialog();
-		    			else {
-		    				new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00092/L6N/CM102_DB.md5","CM102");
-		    			}
-		    		} else {
-		    			kf.execute("CM102");
-		    		}
+		    		handleCM102();
 		    	} else if (items[item].equals("CM 11")) {
-		    		File f = new File(CM11_DIR + "/CM11_DB.md5");
-		    		if(!f.exists()) {
-		    			if(!isConnected())
-		    				showInfoDialog();
-		    			else {
-			    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00093/JxE/CM11_DB.md5","CM11");
-		    			}
-		    		} else {
-		    			kf.execute("CM11");
-		    		}
+		    		handleCM11();
 		    	}
 		    }
 		});
@@ -173,6 +155,61 @@ public class MainActivity extends Activity {
 		alert.show();
     }
 	
+	private void handleCM102() {
+		if(getROM() == PRIMARY_ROM) {
+			KernelFlasher kf = new KernelFlasher(MainActivity.this);
+			File f = new File(CM102_DIR + "/CM102_DB.md5");
+    		if(!f.exists()) {
+    			if(!isConnected())
+    				showInfoDialog();
+    			else {
+    				new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00092/L6N/CM102_DB.md5","CM102");
+    			}
+    		} else {
+    			kf.execute("CM102");
+    		}
+		} else {
+			KernelFlasher kf = new KernelFlasher(MainActivity.this);
+			File f = new File(CM102_DIR + "/CM102_stock.md5");
+    		if(!f.exists()) {
+    			if(!isConnected())
+    				showInfoDialog();
+    			else {
+    				new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00093/ECq/CM102_stock.md5", "CM102_stock");
+    			}
+    		} else {
+    			kf.execute("CM102_stock");
+    		}
+		}
+	}
+	
+	private void handleCM11() {
+		if(getROM() == PRIMARY_ROM) {
+			KernelFlasher kf = new KernelFlasher(MainActivity.this);
+			File f = new File(CM11_DIR + "/CM11_DB.md5");
+			if(!f.exists()) {
+				if(!isConnected())
+					showInfoDialog();
+				else {
+	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00093/JxE/CM11_DB.md5","CM11");
+				}
+			} else {
+				kf.execute("CM11");
+			}
+		} else {
+			KernelFlasher kf = new KernelFlasher(MainActivity.this);
+			File f = new File(CM11_DIR + "/CM11_stock.md5");
+			if(!f.exists()) {
+				if(!isConnected())
+					showInfoDialog();
+				else {
+	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00093/jFc/CM11_stock.md5", "CM11_stock");
+				}
+			} else {
+				kf.execute("CM11_stock");
+			}
+		}
+	}
 	public static boolean isJanice() {
 		String model = SU_wop("getprop ro.product.device", mContext, false);
 		if (!model.equalsIgnoreCase("GT-i9070")) {

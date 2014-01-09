@@ -11,6 +11,7 @@ import static com.harsh.dualboot.Constants.CM102;
 import static com.harsh.dualboot.Constants.CM11;
 import static com.harsh.dualboot.Constants.E;
 import static com.harsh.dualboot.Utils.LOG;
+import static com.harsh.dualboot.Constants.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -74,6 +75,16 @@ public class DownloadActivity extends AsyncTask<String, String, String> {
 	    		path = CM102;
 	    		ver = "CM102";
 	    		editor.putString("last", CM102);
+	    		editor.commit();
+	    	} else if(url[1].equals("CM11_stock")) {
+	    		path = CM11_stock;
+	    		ver = "CM11_stock";
+	    		editor.putString("last", CM11_stock);
+	    		editor.commit();
+	    	} else if (url[1].equals("CM102_stock")) {
+	    		path = CM102_stock;
+	    		ver = "CM102_stock";
+	    		editor.putString("last", CM102_stock);
 	    		editor.commit();
 	    	}
 	        File dest = new File(path);
