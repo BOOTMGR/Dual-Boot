@@ -24,7 +24,8 @@
 	<string name="cleanup_warn">This will remove all files related to Dual Boot mode including downloaded kernels. Are you sure want to continue?</string>
 	<string name="cleanup_warn_title">Warning</string>
 	<string name="cleanup">Clean up</string>
-	<string name="share_dialog">Applying this mod will remove all your installed apps from secondary ROM. Please backup them before proceeding. Some apps like Play Store are most likely to crash if they're updated. Continue?</string>
+	<string name="share_dialog">Applying this mod will remove all your installed apps from secondary ROM. Please backup them before proceeding. Some apps like Play Store are most likely to crash if they\'re updated. Continue?</string>
 	<string name="share_rev_dialog">This will remove all apps from your secondary ROM. Are you sure?</string>
+	<string name="custom_app_share">Custom Application Share</string>
 
 </resources>

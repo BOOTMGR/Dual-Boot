@@ -22,4 +22,10 @@
         android:layout_height="wrap_content"
         android:text="Revert Share Apps with Primary" />
 
+    <Button
+        android:id="@+id/but_share_cust"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Custom Share Apps" />
+
 </LinearLayout>

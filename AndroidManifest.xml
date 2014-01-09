@@ -38,6 +38,11 @@
             android:label="@string/second_tweaks"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.harsh.dualboot.AppShareActivity"
+            android:label="@string/custom_app_share"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

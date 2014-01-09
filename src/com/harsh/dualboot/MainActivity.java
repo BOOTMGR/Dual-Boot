@@ -174,7 +174,7 @@ public class MainActivity extends Activity {
     }
 	
 	public static boolean isJanice() {
-		String model = SU_wop("getprop ro.product.device", mContext);
+		String model = SU_wop("getprop ro.product.device", mContext, false);
 		if (!model.equalsIgnoreCase("GT-i9070")) {
 			Toast.makeText(mContext, "Unsupported Device", Toast.LENGTH_SHORT).show();
 			LOG("Unsupported Device : "+model, E);

@@ -13,6 +13,7 @@ import static com.harsh.dualboot.Constants.SECONDARY_DATA;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,6 +28,7 @@ public class SecondaryTweaks extends Activity {
 		Button but_wipe = (Button) findViewById(R.id.but_wipe);
 		Button but_share = (Button) findViewById(R.id.but_share);
 		Button but_share_ret = (Button) findViewById(R.id.but_share_rev);
+		Button but_share_cust = (Button) findViewById(R.id.but_share_cust);
 		but_wipe.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -46,6 +48,13 @@ public class SecondaryTweaks extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				mRevertShare();
+			}
+		});
+		but_share_cust.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				startActivity(new Intent(SecondaryTweaks.this, AppShareActivity.class));
 			}
 		});
 	}

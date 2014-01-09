@@ -40,7 +40,7 @@ public class DownloadActivity extends AsyncTask<String, String, String> {
 	     mProgressDialog.setIndeterminate(false);
 	     mProgressDialog.setMax(100);
 	     mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-	     mProgressDialog.setCancelable(true);
+	     mProgressDialog.setCancelable(false);
 	     mProgressDialog.setOnCancelListener(new OnCancelListener(){
 	    	 @Override
 	    	 public void onCancel(DialogInterface arg0){
