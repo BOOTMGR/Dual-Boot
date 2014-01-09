@@ -18,7 +18,7 @@ import android.widget.Toast;
 import static com.harsh.dualboot.Constants.*;
 
 public class Utils {
-	public static String SU_wop(String cmds, Context context) {
+	public static String SU_wop(String cmds, Context context, boolean newline) {
         String out = null;
         try {
             out = new String();
@@ -41,6 +41,8 @@ public class Utils {
         	Toast.makeText(context, "Error getting SU rights", Toast.LENGTH_SHORT).show();
             LOG("Error getting SU rights", E);
         }
+        if(newline)
+        	return out;
         return out.substring(0,out.length()-1);
     }
 	
