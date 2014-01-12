@@ -30,7 +30,7 @@ public class AppShareActivity extends Activity {
 		ListView lv = (ListView) findViewById(R.id.lv1);
 		final PackageManager pm = getPackageManager();
 		List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
-		List<String> appLabel = new ArrayList<String>();
+		final List<String> appLabel = new ArrayList<String>();
 		final List<String> packageName = new ArrayList<String>();
 		for(ApplicationInfo appinfo : packages) {
 			if ((appinfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0)
@@ -50,6 +50,7 @@ public class AppShareActivity extends Activity {
 				try {
 					Process p = Runtime.getRuntime().exec("su -c ln -s /primary_data/app/" + apk + " /data/secondary_data/data/app/" + apk);
 					p.waitFor();
+					Toast.makeText(AppShareActivity.this, "Shared : " + appLabel.get(arg2), Toast.LENGTH_SHORT).show();
 				} catch(Exception e) {
 					Toast.makeText(AppShareActivity.this, "Error executing SU", Toast.LENGTH_SHORT).show();
 				}
