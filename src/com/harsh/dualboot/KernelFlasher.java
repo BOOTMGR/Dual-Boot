@@ -33,6 +33,7 @@ public class KernelFlasher extends AsyncTask<String, Void, Void> {
 	     mProgressDialog = new ProgressDialog(context);
 	     mProgressDialog.setMessage("Flashing Kernel...");
 	     mProgressDialog.setIndeterminate(true);
+	     mProgressDialog.setCancelable(false);
 	     mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 	}
 	
