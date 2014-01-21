@@ -54,6 +54,10 @@ public class MainActivity extends Activity {
 		but_prim = (Button) findViewById(R.id.but_primary);
 		but_sec = (Button) findViewById(R.id.but_secondary);
 		SharedPreferences mprefs = MainActivity.this.getSharedPreferences("download",0);
+		SharedPreferences appPrefs = MainActivity.this.getSharedPreferences("application",0);
+		int ver = appPrefs.getInt("version", 100);
+		if(current_version > ver)
+			clearDir();
 		boolean b = mprefs.getBoolean("interuppted", false);
 		boolean first = mprefs.getBoolean("first", true);
 		if(first)
@@ -75,6 +79,9 @@ public class MainActivity extends Activity {
 				break;
 		}
 		editor.putBoolean("first", false);
+		editor.commit();
+		editor = appPrefs.edit();
+		editor.putInt("version", current_version);
 		editor.commit();
 	}
 	
@@ -311,5 +318,13 @@ public class MainActivity extends Activity {
 		f = new File(STOCK_DIR);
 		if(!f.exists())
 			f.mkdirs();
+	}
+	
+	private void clearDir() {
+		File f;
+		f = new File(CM102);
+		f.delete();
+		f = new File(CM11);
+		f.delete();
 	}
 }

@@ -28,4 +28,5 @@ public class Constants {
 	public static final int SECONDARY_ROM = 1;
 	public static final char E = 'e';
 	public static final char D = 'd';
+	public static final int current_version = 100;
 }
