@@ -16,6 +16,7 @@ import static com.harsh.dualboot.Utils.LOG;
 import static com.harsh.dualboot.Constants.*;
 
 import java.io.DataOutputStream;
+import java.io.File;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -47,7 +48,10 @@ public class KernelFlasher extends AsyncTask<String, Void, Void> {
 	protected void onPostExecute(Void v) {
 	    mProgressDialog.dismiss();
 	    Toast.makeText(context, "Kernel Flashed successfully", Toast.LENGTH_SHORT).show();
-	    Toast.makeText(context, "Reboot your device now", Toast.LENGTH_LONG).show();
+	    Toast.makeText(context, "Reboot your device now", Toast.LENGTH_SHORT).show();
+	    File f = new File("/sys/kernel/abb-ponkey/emulator");
+	    if(f.exists())
+	    	new SU(context).execute("echo 800 > /sys/kernel/abb-ponkey/emulator");
 	}
 
 	@Override

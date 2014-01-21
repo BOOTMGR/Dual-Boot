@@ -8,24 +8,24 @@
         android:id="@+id/but_wipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Wipe data/factory Reset" />
+        android:text="@string/factory_reset" />
 
     <Button
         android:id="@+id/but_share"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Share Apps with Primary" />
+        android:text="@string/share_apps_with_primary" />
     
     <Button
         android:id="@+id/but_share_rev"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Revert Share Apps with Primary" />
+        android:text="@string/revert_share_apps_with_primary" />
 
     <Button
         android:id="@+id/but_share_cust"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Custom Share Apps" />
+        android:text="@string/custom_app_share" />
 
 </LinearLayout>
