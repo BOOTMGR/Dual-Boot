@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
 		but_sec = (Button) findViewById(R.id.but_secondary);
 		SharedPreferences mprefs = MainActivity.this.getSharedPreferences("download",0);
 		SharedPreferences appPrefs = MainActivity.this.getSharedPreferences("application",0);
-		int ver = appPrefs.getInt("version", 100);
+		int ver = appPrefs.getInt("version", 110);
 		if(current_version > ver)
 			clearDir();
 		boolean b = mprefs.getBoolean("interuppted", false);
