@@ -138,7 +138,7 @@ public class MainActivity extends Activity {
     {
 		CharSequence[] temp = {"CM 10.2", "CM 11", "MIUI"};
 		if (isSecondary)
-			temp = new CharSequence[]{"Stock", "CM 10.2", "CM 11", "MIUI"};
+			temp = new CharSequence[]{"Stock", "CM 10.2", "CM 11", "MIUI", "Unknown"};
 		AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 		builder.setTitle("Select ROM");
 		final CharSequence items[] = temp;
@@ -157,6 +157,12 @@ public class MainActivity extends Activity {
 		    		handleCM11();
 		    	} else if (items[item].equals("MIUI")) {
 		    		handleMIUI();
+		    	} else if (items[item].equals("MIUI")) {
+		    		File f = new File(UNKNOWN);
+		    		if(!f.exists())
+		    			showUnknownDialog(MainActivity.this);
+		    		else
+		    			kf.execute("unknown");
 		    	}
 		    }
 		});
@@ -277,6 +283,18 @@ public class MainActivity extends Activity {
 	private void showStockInfoDialog(final Context context) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		builder.setMessage(R.string.stock_dialog);
+		builder.setTitle(R.string.stock_dialog_title);
+		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            	return;
+            }
+        });
+		builder.create().show();
+	}
+	
+	private void showUnknownDialog(final Context context) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setMessage(R.string.unknown_dialog);
 		builder.setTitle(R.string.stock_dialog_title);
 		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {

@@ -30,5 +30,6 @@
 	<string name="factory_reset">Wipe Data/Factory Reset</string>
 	<string name="share_apps_with_primary">Share Primary\'s Apps</string>
 	<string name="revert_share_apps_with_primary">Revert Share Primary\'s Apps</string>
+	<string name="unknown_dialog">Put unknown kernel into /sdcard/DualBoot/Unknown/unknown.md5 which will nly be used to boot and ROM as Primary ROM</string>
 
 </resources>

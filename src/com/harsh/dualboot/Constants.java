@@ -22,6 +22,8 @@ public class Constants {
 	public static final String MIUI_DIR = SDCARD_ROOT + "/DualBoot/MIUI";
 	public static final String MIUI = SDCARD_ROOT + "/DualBoot/MIUI/MIUI_DB.md5";
 	public static final String MIUI_Stock = SDCARD_ROOT + "/DualBoot/MIUI/MIUI_stock.md5";
+	public static final String UNKNOWN = SDCARD_ROOT + "/DualBoot/Unknown/unknown.md5";
+	public static final String UNKNOWN_DIR = SDCARD_ROOT + "/DualBoot/Unknown";
 	public static final String PRIMARY_DATA = "/primary_data";
 	public static final String SECONDARY = "/data/secondary_data";
 	public static final String SECONDARY_DATA = "/data/secondary_data/data";
