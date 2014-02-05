@@ -157,7 +157,7 @@ public class MainActivity extends Activity {
 		    		handleCM11();
 		    	} else if (items[item].equals("MIUI")) {
 		    		handleMIUI();
-		    	} else if (items[item].equals("MIUI")) {
+		    	} else if (items[item].equals("Unknown")) {
 		    		File f = new File(UNKNOWN);
 		    		if(!f.exists())
 		    			showUnknownDialog(MainActivity.this);
@@ -368,6 +368,9 @@ public class MainActivity extends Activity {
 		if(!f.exists())
 			f.mkdirs();
 		f = new File(MIUI_DIR);
+		if(!f.exists())
+			f.mkdirs();
+		f = new File(UNKNOWN_DIR);
 		if(!f.exists())
 			f.mkdirs();
 	}
