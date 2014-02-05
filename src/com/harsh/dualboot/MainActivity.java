@@ -136,9 +136,9 @@ public class MainActivity extends Activity {
 	
 	public void ShowDialog(boolean isSecondary)
     {
-		CharSequence[] temp = {"CM 10.2", "CM 11"};
+		CharSequence[] temp = {"CM 10.2", "CM 11", "MIUI"};
 		if (isSecondary)
-			temp = new CharSequence[]{"Stock", "CM 10.2", "CM 11"};
+			temp = new CharSequence[]{"Stock", "CM 10.2", "CM 11", "MIUI"};
 		AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 		builder.setTitle("Select ROM");
 		final CharSequence items[] = temp;
@@ -155,6 +155,8 @@ public class MainActivity extends Activity {
 		    		handleCM102();
 		    	} else if (items[item].equals("CM 11")) {
 		    		handleCM11();
+		    	} else if (items[item].equals("MIUI")) {
+		    		handleMIUI();
 		    	}
 		    }
 		});
@@ -217,6 +219,35 @@ public class MainActivity extends Activity {
 			}
 		}
 	}
+	
+	private void handleMIUI() {
+		if(getROM() == PRIMARY_ROM) {
+			KernelFlasher kf = new KernelFlasher(MainActivity.this);
+			File f = new File(MIUI_DIR + "/MIUI_DB.md5");
+			if(!f.exists()) {
+				if(!isConnected())
+					showInfoDialog();
+				else {
+	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00098/zHi/MIUI_DB.md5","MIUI");
+				}
+			} else {
+				kf.execute("MIUI");
+			}
+		} else {
+			KernelFlasher kf = new KernelFlasher(MainActivity.this);
+			File f = new File(MIUI_DIR + "/MIUI_stock.md5");
+			if(!f.exists()) {
+				if(!isConnected())
+					showInfoDialog();
+				else {
+	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00098/Zu6/MIUI_stock.md5", "MIUI_stock");
+				}
+			} else {
+				kf.execute("MIUI_stock");
+			}
+		}
+	}
+	
 	public static boolean isJanice() {
 		String model = SU_wop("getprop ro.product.device", mContext, false);
 		if (!model.equalsIgnoreCase("GT-i9070")) {
@@ -318,6 +349,9 @@ public class MainActivity extends Activity {
 		f = new File(STOCK_DIR);
 		if(!f.exists())
 			f.mkdirs();
+		f = new File(MIUI_DIR);
+		if(!f.exists())
+			f.mkdirs();
 	}
 	
 	private void clearDir() {
@@ -325,6 +359,8 @@ public class MainActivity extends Activity {
 		f = new File(CM102);
 		f.delete();
 		f = new File(CM11);
+		f.delete();
+		f = new File(MIUI);
 		f.delete();
 	}
 }
