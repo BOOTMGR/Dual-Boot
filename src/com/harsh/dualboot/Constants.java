@@ -27,6 +27,14 @@ public class Constants {
 	public static final String AOSP_stock = SDCARD_ROOT + "/DualBoot/AOSP/aosp_stock.md5";
 	public static final String UNKNOWN = SDCARD_ROOT + "/DualBoot/Unknown/unknown.md5";
 	public static final String UNKNOWN_DIR = SDCARD_ROOT + "/DualBoot/Unknown";
+	public static final String DLINK_CM102 = "http://fs1.d-h.st/download/00092/L6N/CM102_DB.md5";
+	public static final String DLINK_CM102_STOCK = "http://fs1.d-h.st/download/00099/KHw/CM102_stock.md5";
+	public static final String DLINK_CM11 = "http://fs1.d-h.st/download/00093/JxE/CM11_DB.md5";
+	public static final String DLINK_CM11_STOCK = "http://fs1.d-h.st/download/00099/i6S/CM11_stock.md5";
+	public static final String DLINK_MIUI = "http://fs1.d-h.st/download/00098/zHi/MIUI_DB.md5";
+	public static final String DLINK_MIUI_STOCK = "http://fs1.d-h.st/download/00098/Zu6/MIUI_stock.md5";
+	public static final String DLINK_AOSP = "http://fs1.d-h.st/download/00099/z6d/aosp_db.md5";
+	public static final String DLINK_AOSP_STOCK = "http://fs1.d-h.st/download/00099/GfF/aosp_stock.md5";
 	public static final String PRIMARY_DATA = "/primary_data";
 	public static final String SECONDARY = "/data/secondary_data";
 	public static final String SECONDARY_DATA = "/data/secondary_data/data";

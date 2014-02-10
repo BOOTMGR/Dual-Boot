@@ -146,7 +146,7 @@ public class MainActivity extends Activity {
 		    public void onClick(DialogInterface dialog, int item) {
 		    	KernelFlasher kf = new KernelFlasher(MainActivity.this);
 		    	if (items[item].equals("Stock")) {
-		    		File f = new File(STOCK_DIR + "/stock.md5");
+		    		File f = new File(STOCK);
 		    		if(!f.exists())
 		    			showStockInfoDialog(MainActivity.this);
 		    		else
@@ -175,24 +175,24 @@ public class MainActivity extends Activity {
 	private void handleCM102() {
 		if(getROM() == PRIMARY_ROM) {
 			KernelFlasher kf = new KernelFlasher(MainActivity.this);
-			File f = new File(CM102_DIR + "/CM102_DB.md5");
+			File f = new File(CM102);
     		if(!f.exists()) {
     			if(!isConnected())
     				showInfoDialog();
     			else {
-    				new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00092/L6N/CM102_DB.md5","CM102");
+    				new DownloadActivity(MainActivity.this).execute(DLINK_CM102,"CM102");
     			}
     		} else {
     			kf.execute("CM102");
     		}
 		} else {
 			KernelFlasher kf = new KernelFlasher(MainActivity.this);
-			File f = new File(CM102_DIR + "/CM102_stock.md5");
+			File f = new File(CM102_stock);
     		if(!f.exists()) {
     			if(!isConnected())
     				showInfoDialog();
     			else {
-    				new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00099/KHw/CM102_stock.md5", "CM102_stock");
+    				new DownloadActivity(MainActivity.this).execute(DLINK_CM102_STOCK, "CM102_stock");
     			}
     		} else {
     			kf.execute("CM102_stock");
@@ -203,24 +203,24 @@ public class MainActivity extends Activity {
 	private void handleCM11() {
 		if(getROM() == PRIMARY_ROM) {
 			KernelFlasher kf = new KernelFlasher(MainActivity.this);
-			File f = new File(CM11_DIR + "/CM11_DB.md5");
+			File f = new File(CM11);
 			if(!f.exists()) {
 				if(!isConnected())
 					showInfoDialog();
 				else {
-	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00093/JxE/CM11_DB.md5","CM11");
+	    			new DownloadActivity(MainActivity.this).execute(DLINK_CM11,"CM11");
 				}
 			} else {
 				kf.execute("CM11");
 			}
 		} else {
 			KernelFlasher kf = new KernelFlasher(MainActivity.this);
-			File f = new File(CM11_DIR + "/CM11_stock.md5");
+			File f = new File(CM11_stock);
 			if(!f.exists()) {
 				if(!isConnected())
 					showInfoDialog();
 				else {
-	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00099/i6S/CM11_stock.md5", "CM11_stock");
+	    			new DownloadActivity(MainActivity.this).execute(DLINK_CM11_STOCK, "CM11_stock");
 				}
 			} else {
 				kf.execute("CM11_stock");
@@ -231,24 +231,24 @@ public class MainActivity extends Activity {
 	private void handleMIUI() {
 		if(getROM() == PRIMARY_ROM) {
 			KernelFlasher kf = new KernelFlasher(MainActivity.this);
-			File f = new File(MIUI_DIR + "/MIUI_DB.md5");
+			File f = new File(MIUI);
 			if(!f.exists()) {
 				if(!isConnected())
 					showInfoDialog();
 				else {
-	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00098/zHi/MIUI_DB.md5","MIUI");
+	    			new DownloadActivity(MainActivity.this).execute(DLINK_MIUI, "MIUI");
 				}
 			} else {
 				kf.execute("MIUI");
 			}
 		} else {
 			KernelFlasher kf = new KernelFlasher(MainActivity.this);
-			File f = new File(MIUI_DIR + "/MIUI_stock.md5");
+			File f = new File(MIUI_Stock);
 			if(!f.exists()) {
 				if(!isConnected())
 					showInfoDialog();
 				else {
-	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00098/Zu6/MIUI_stock.md5", "MIUI_stock");
+	    			new DownloadActivity(MainActivity.this).execute(DLINK_MIUI_STOCK, "MIUI_stock");
 				}
 			} else {
 				kf.execute("MIUI_stock");
@@ -259,24 +259,24 @@ public class MainActivity extends Activity {
 	private void handleAOSP() {
 		if(getROM() == PRIMARY_ROM) {
 			KernelFlasher kf = new KernelFlasher(MainActivity.this);
-			File f = new File(AOSP_DIR + "/aosp_db.md5");
+			File f = new File(AOSP);
 			if(!f.exists()) {
 				if(!isConnected())
 					showInfoDialog();
 				else {
-	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00099/z6d/aosp_db.md5","AOSP");
+	    			new DownloadActivity(MainActivity.this).execute(DLINK_AOSP, "AOSP");
 				}
 			} else {
 				kf.execute("AOSP");
 			}
 		} else {
 			KernelFlasher kf = new KernelFlasher(MainActivity.this);
-			File f = new File(AOSP_DIR + "/aosp_stock.md5");
+			File f = new File(AOSP_stock);
 			if(!f.exists()) {
 				if(!isConnected())
 					showInfoDialog();
 				else {
-	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00099/GfF/aosp_stock.md5", "AOSP_stock");
+	    			new DownloadActivity(MainActivity.this).execute(DLINK_AOSP_STOCK, "AOSP_stock");
 				}
 			} else {
 				kf.execute("AOSP_stock");
