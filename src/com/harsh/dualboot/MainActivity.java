@@ -192,7 +192,7 @@ public class MainActivity extends Activity {
     			if(!isConnected())
     				showInfoDialog();
     			else {
-    				new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00093/ECq/CM102_stock.md5", "CM102_stock");
+    				new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00099/KHw/CM102_stock.md5", "CM102_stock");
     			}
     		} else {
     			kf.execute("CM102_stock");
@@ -220,7 +220,7 @@ public class MainActivity extends Activity {
 				if(!isConnected())
 					showInfoDialog();
 				else {
-	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00093/jFc/CM11_stock.md5", "CM11_stock");
+	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00099/i6S/CM11_stock.md5", "CM11_stock");
 				}
 			} else {
 				kf.execute("CM11_stock");
