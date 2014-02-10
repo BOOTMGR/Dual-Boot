@@ -22,6 +22,9 @@ public class Constants {
 	public static final String MIUI_DIR = SDCARD_ROOT + "/DualBoot/MIUI";
 	public static final String MIUI = SDCARD_ROOT + "/DualBoot/MIUI/MIUI_DB.md5";
 	public static final String MIUI_Stock = SDCARD_ROOT + "/DualBoot/MIUI/MIUI_stock.md5";
+	public static final String AOSP_DIR = SDCARD_ROOT + "/DualBoot/AOSP";
+	public static final String AOSP = SDCARD_ROOT + "/DualBoot/AOSP/aosp_db.md5";
+	public static final String AOSP_stock = SDCARD_ROOT + "/DualBoot/AOSP/aosp_stock.md5";
 	public static final String UNKNOWN = SDCARD_ROOT + "/DualBoot/Unknown/unknown.md5";
 	public static final String UNKNOWN_DIR = SDCARD_ROOT + "/DualBoot/Unknown";
 	public static final String PRIMARY_DATA = "/primary_data";
@@ -33,5 +36,5 @@ public class Constants {
 	public static final int SECONDARY_ROM = 1;
 	public static final char E = 'e';
 	public static final char D = 'd';
-	public static final int current_version = 110;
+	public static final int current_version = 120;
 }

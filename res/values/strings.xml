@@ -12,7 +12,7 @@
     <string name="no_network_dialog_title">No connection</string>
     <string name="first_dialog">This application performs dangerous operations.You\'re using this application on your own risk.Developer is not responsible for any damage done by this software.It is highly recommended to use this application under lower system load.</string>
     <string name="first_dialog_title">Attention</string>
-    <string name="app_ver">1.00</string>
+    <string name="app_ver">1.20</string>
     <string name="developer">Developer:</string>
     <string name="me">Harsh Panchal (BOOTMGR@xda-developers.com)</string>
     <string name="about">About</string>

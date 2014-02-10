@@ -75,6 +75,10 @@ public class KernelFlasher extends AsyncTask<String, Void, Void> {
 	        	   path = MIUI;
 	           else if (arg[0].equals("MIUI_stock"))
 	        	   path = MIUI_Stock;
+	           else if (arg[0].equals("AOSP"))
+	        	   path = AOSP;
+	           else if (arg[0].equals("AOSP_stock"))
+	        	   path = AOSP_stock;
 	           else if (arg[0].equals("unknown"))
 	        	   path = UNKNOWN;
 	           os.writeBytes("dd if=" + path + " of=" + BOOT_PART + "\n");

@@ -96,6 +96,16 @@ public class DownloadActivity extends AsyncTask<String, String, String> {
 	    		ver = "MIUI_stock";
 	    		editor.putString("last", "MIUI_stock");
 	    		editor.commit();
+	    	} else if (url[1].equals("AOSP")) {
+	    		path = AOSP;
+	    		ver = "AOSP";
+	    		editor.putString("last", "AOSP");
+	    		editor.commit();
+	    	} else if (url[1].equals("AOSP_stock")) {
+	    		path = AOSP_stock;
+	    		ver = "AOSP_stock";
+	    		editor.putString("last", "AOSP_stock");
+	    		editor.commit();
 	    	}
 	        File dest = new File(path);
 	        URL u = new URL(url[0]);

@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
 		but_sec = (Button) findViewById(R.id.but_secondary);
 		SharedPreferences mprefs = MainActivity.this.getSharedPreferences("download",0);
 		SharedPreferences appPrefs = MainActivity.this.getSharedPreferences("application",0);
-		int ver = appPrefs.getInt("version", 110);
+		int ver = appPrefs.getInt("version", current_version);
 		if(current_version > ver)
 			clearDir();
 		boolean b = mprefs.getBoolean("interuppted", false);
@@ -136,9 +136,9 @@ public class MainActivity extends Activity {
 	
 	public void ShowDialog(boolean isSecondary)
     {
-		CharSequence[] temp = {"CM 10.2", "CM 11", "MIUI"};
+		CharSequence[] temp = {"CM 10.2", "CM 11", "MIUI", "AOSP (KK)"};
 		if (isSecondary)
-			temp = new CharSequence[]{"Stock", "CM 10.2", "CM 11", "MIUI", "Unknown"};
+			temp = new CharSequence[]{"Stock", "CM 10.2", "CM 11", "MIUI", "AOSP (KK)", "Unknown"};
 		AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 		builder.setTitle("Select ROM");
 		final CharSequence items[] = temp;
@@ -157,6 +157,8 @@ public class MainActivity extends Activity {
 		    		handleCM11();
 		    	} else if (items[item].equals("MIUI")) {
 		    		handleMIUI();
+		    	} else if (items[item].equals("AOSP (KK)")) {
+		    		handleAOSP();
 		    	} else if (items[item].equals("Unknown")) {
 		    		File f = new File(UNKNOWN);
 		    		if(!f.exists())
@@ -250,6 +252,34 @@ public class MainActivity extends Activity {
 				}
 			} else {
 				kf.execute("MIUI_stock");
+			}
+		}
+	}
+	
+	private void handleAOSP() {
+		if(getROM() == PRIMARY_ROM) {
+			KernelFlasher kf = new KernelFlasher(MainActivity.this);
+			File f = new File(AOSP_DIR + "/aosp_db.md5");
+			if(!f.exists()) {
+				if(!isConnected())
+					showInfoDialog();
+				else {
+	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00099/z6d/aosp_db.md5","AOSP");
+				}
+			} else {
+				kf.execute("AOSP");
+			}
+		} else {
+			KernelFlasher kf = new KernelFlasher(MainActivity.this);
+			File f = new File(AOSP_DIR + "/aosp_stock.md5");
+			if(!f.exists()) {
+				if(!isConnected())
+					showInfoDialog();
+				else {
+	    			new DownloadActivity(MainActivity.this).execute("http://fs1.d-h.st/download/00099/GfF/aosp_stock.md5", "AOSP_stock");
+				}
+			} else {
+				kf.execute("AOSP_stock");
 			}
 		}
 	}
@@ -370,6 +400,9 @@ public class MainActivity extends Activity {
 		f = new File(MIUI_DIR);
 		if(!f.exists())
 			f.mkdirs();
+		f = new File(AOSP_DIR);
+		if(!f.exists())
+			f.mkdirs();
 		f = new File(UNKNOWN_DIR);
 		if(!f.exists())
 			f.mkdirs();
@@ -382,6 +415,8 @@ public class MainActivity extends Activity {
 		f = new File(CM11);
 		f.delete();
 		f = new File(MIUI);
+		f.delete();
+		f = new File(AOSP);
 		f.delete();
 	}
 }
