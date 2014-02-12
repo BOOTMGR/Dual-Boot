@@ -302,11 +302,24 @@ public class MainActivity extends Activity {
             public void onClick(DialogInterface dialog, int id) {
             	new SU(MainActivity.this).execute("rm -r " + SECONDARY);
             	new SU(MainActivity.this).execute("rm -r /cache");
-            	new SU(MainActivity.this).execute("rm -r " + SDCARD_ROOT + "/DualBoot");
+            	keepKernelDialog(MainActivity.this);
             	return;
             }
         });
 		builder.setNegativeButton(R.string.cancel, null);
+		builder.create().show();
+	}
+	
+	private void keepKernelDialog(final Context context) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setMessage(R.string.keep_kernel_dialog);
+		builder.setTitle(R.string.stock_dialog_title);
+		builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            	new SU(MainActivity.this).execute("rm -r " + SDCARD_ROOT + "/DualBoot");
+            	return;
+            }
+        });
 		builder.create().show();
 	}
 	

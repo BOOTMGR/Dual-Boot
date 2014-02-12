@@ -5,6 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="ok">OK</string>
+    <string name="yes">Yes</string>
     <string name="cancel">Cancel</string>
     <string name="stock_dialog">Put stock based kernel inside /sdcard/DualBoot/Stock/stock.md5</string>
     <string name="stock_dialog_title">Attention</string>
@@ -26,10 +27,11 @@
 	<string name="cleanup">Clean up</string>
 	<string name="share_dialog">Applying this mod will remove all your installed apps from secondary ROM. Please backup them before proceeding. Some apps like Play Store are most likely to crash if they\'re updated. Continue?</string>
 	<string name="share_rev_dialog">This will remove all apps from your secondary ROM. Are you sure?</string>
-	<string name="custom_app_share">Custom Application Share</string>
+	<string name="custom_app_share">Share Applications</string>
 	<string name="factory_reset">Wipe Data/Factory Reset</string>
 	<string name="share_apps_with_primary">Share Primary\'s Apps</string>
 	<string name="revert_share_apps_with_primary">Revert Share Primary\'s Apps</string>
 	<string name="unknown_dialog">Put unknown kernel into /sdcard/DualBoot/Unknown/unknown.md5 which will nly be used to boot and ROM as Primary ROM</string>
+	<string name="keep_kernel_dialog">Do you want to delete downloaded kernels?</string>
 
 </resources>
