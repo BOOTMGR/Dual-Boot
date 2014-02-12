@@ -33,7 +33,7 @@ public class Constants {
 	public static final String DLINK_CM11_STOCK = "http://fs1.d-h.st/download/00099/i6S/CM11_stock.md5";
 	public static final String DLINK_MIUI = "http://fs1.d-h.st/download/00098/zHi/MIUI_DB.md5";
 	public static final String DLINK_MIUI_STOCK = "http://fs1.d-h.st/download/00098/Zu6/MIUI_stock.md5";
-	public static final String DLINK_AOSP = "http://fs1.d-h.st/download/00099/z6d/aosp_db.md5";
+	public static final String DLINK_AOSP = "http://fs1.d-h.st/download/00099/dvd/aosp_db.md5";
 	public static final String DLINK_AOSP_STOCK = "http://fs1.d-h.st/download/00099/GfF/aosp_stock.md5";
 	public static final String PRIMARY_DATA = "/primary_data";
 	public static final String SECONDARY = "/data/secondary_data";
