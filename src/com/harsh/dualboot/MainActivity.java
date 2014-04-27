@@ -286,7 +286,7 @@ public class MainActivity extends Activity {
 	
 	public static boolean isJanice() {
 		String model = SU_wop("getprop ro.product.device", mContext, false);
-		if (!model.equalsIgnoreCase("GT-i9070")) {
+		if (!model.equalsIgnoreCase("GT-i9070") || !model.equalsIgnoreCase("janice")) {
 			Toast.makeText(mContext, "Unsupported Device", Toast.LENGTH_SHORT).show();
 			LOG("Unsupported Device : "+model, E);
 			return false;
